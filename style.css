@@ -1,0 +1,121 @@
+* {box-sizing: border-box;}
+
+body {margin: 0;
+    background-color: #dfcfbe;
+    font-family: sans-serif;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    border: 3px solid black;
+    padding: 20px;
+    background-color: #048A81;
+    border-radius: 5px;
+}
+
+.buttons > *:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.numbers-row {
+    display: flex;
+    gap: 6px;
+}
+
+.number {
+    flex-basis: 33.333%;
+    border-radius: 5px;
+    background-color: #8A89C0;
+    color: white;
+}
+
+.number:active {
+    background-color: #474056;
+}
+
+#screen {
+    font-size: 3.5rem;
+    background-color: #FFF689;
+    color: #8A89C0;
+    padding: 10px 15px;
+    text-align: end;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.operations {
+    display: flex;
+    gap: 6px;
+}
+
+.operations > * {
+    flex-basis: 20%;
+}
+
+.operation {
+    background-color: #06D6A0;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.operation:active {
+    background-color: #06634a;
+}
+
+#zero {
+   flex-basis: 66.666%;
+}
+ 
+.calculator button {
+    font-size: 2rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.action {
+    background-color: #FEEFDD;
+    color: #201E1F;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+}
+
+#clear {
+    flex: 1;
+    background-color: #CDA2AB;
+    color: white;
+}
+
+#sign {
+    background-color: #8A89C0;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .calculator {
+        width: auto;
+    }
+}
