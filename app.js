@@ -70,6 +70,7 @@ const multiplication = document.querySelector("#multiplication");
 const subtraction = document.querySelector("#subtraction");
 const sign = document.querySelector("#sign");
 const clear = document.querySelector("#clear");
+const backspace = document.querySelector("#backspace");
 
 one.addEventListener("click", () => {
   check();
@@ -122,8 +123,10 @@ zero.addEventListener("click", () => {
 });
 
 decimal.addEventListener("click", () => {
-  check();
-  display(decimal.innerText);
+  if(!(screenString.includes("."))) {
+    check();
+    display(decimal.innerText);
+  }
 });
 
 equals.addEventListener("click", () => {
@@ -207,3 +210,33 @@ clear.addEventListener("click", () => {
   screenString = "";
   screen.innerText = "0";
 });
+
+backspace.addEventListener("click", () => {
+  screenString.slice(0, -1);
+  screen.innerText = screen.innerText.slice(0, -1);
+  if (screen.innerText == "") {
+    screen.innerText = "0";
+    screenString = "";
+  }
+})
+
+window.addEventListener("keydown", function(event) {
+  event.preventDefault();
+  if (event.key === "1") one.click();
+  else if (event.key === "2") two.click();
+  else if (event.key === "3") three.click();
+  else if (event.key === "4") four.click();
+  else if (event.key === "5") five.click(); 
+  else if (event.key === "6") six.click();
+  else if (event.key === "7") seven.click();
+  else if (event.key === "8") eight.click();
+  else if (event.key === "9") nine.click();
+  else if (event.key === "0") zero.click();
+  else if (event.key === ".") decimal.click();
+  else if (event.key === "/") division.click();
+  else if (event.key === "*") multiplication.click();
+  else if (event.key === "+") addition.click();
+  else if (event.key === "-") subtraction.click();
+  else if (event.key === "Enter") equals.click();
+  else if (event.key === "Backspace") backspace.click();
+})

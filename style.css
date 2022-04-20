@@ -14,7 +14,7 @@ body {margin: 0;
 
 .calculator {
     display: flex;
-    width: 20%;
+    flex-basis: 20%;
     flex-direction: column;
     border: 3px solid black;
     padding: 20px;
@@ -109,13 +109,22 @@ button {
     color: white;
 }
 
+#clear:active {
+    background-color: grey;
+}
+
 #sign {
     background-color: #8A89C0;
     color: white;
 }
 
+#sign:active {
+    background-color: #474056;
+}
+
 @media (max-width: 800px) {
     .calculator {
         width: auto;
+        flex-basis: auto;
     }
 }
