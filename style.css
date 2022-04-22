@@ -124,7 +124,6 @@ button {
 
 @media (max-width: 800px) {
     .calculator {
-        width: auto;
-        flex-basis: auto;
+        flex-basis: 85%;
     }
 }
